@@ -22,7 +22,7 @@ io.sockets.on('connection', function (socket) {
 
 // client
 var client = require('socket.io-client');
-var csocket = client.connect('http://devel.shoboon.com:8001');
+var csocket = client.connect('http://example.com:8001');
 
 exports.index = function(req, res){
 
