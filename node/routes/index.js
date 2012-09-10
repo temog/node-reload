@@ -32,10 +32,12 @@ exports.index = function(req, res){
 	var remoteIP = req.connection.remoteAddress;
 
 	require('dns').reverse(remoteIP, function(err, domain){
-		if(err){
+		if(err || ! domain){
 			host = remoteIP;
 		}
-		host = domain[0];
+		else {
+			host = domain[0];
+		}
 
 		if(host && path){
 			console.log(remoteIP + ":" + path);
